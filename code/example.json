@@ -1,42 +1,343 @@
-[{"label":"Disease","type":"VERTEX","properties":
-[{"name":"name","type":"STRING","optional":false,"unique":true,"index":true}],"primary":"name"},
-{"label":"Alias","type":"VERTEX","properties":
-[{"name":"name","type":"STRING","optional":false,"unique":true,"index":true}],"primary":"name"},
-{"label":"HAS_ALIAS","type":"EDGE","properties":[],"constraints":[["Disease","Alias"]]},
-{"label":"Part","type":"VERTEX","properties":
-[{"name":"name","type":"STRING","optional":false,"unique":true,"index":true}],"primary":"name"},
-{"label":"IS_OF_PART","type":"EDGE","properties":[],"constraints":[["Disease","Part"]]},
-{"label":"Age","type":"VERTEX","properties":
-[{"name":"name","type":"STRING","optional":false,"unique":true,"index":true}],"primary":"name"},
-{"label":"IS_OF_AGE","type":"EDGE","properties":[],"constraints":[["Disease","Age"]]},
-{"label":"Infection","type":"VERTEX","properties":
-[{"name":"name","type":"STRING","optional":false,"unique":true,"index":true}],"primary":"name"},
-{"label":"IS_INFECTIOUS","type":"EDGE","properties":[],"constraints":[["Disease","Infection"]]},
-{"label":"Insurance","type":"VERTEX","properties":
-[{"name":"name","type":"STRING","optional":false,"unique":true,"index":true}],"primary":"name"},
-{"label":"In_Insurance","type":"EDGE","properties":[],"constraints":[["Disease","Insurance"]]},
-{"label":"Department","type":"VERTEX","properties":
-[{"name":"name","type":"STRING","optional":false,"unique":true,"index":true}],"primary":"name"},
-{"label":"IS_OF_Department","type":"EDGE","properties":[],"constraints":[["Disease","Department"]]},
-{"label":"Checklist","type":"VERTEX","properties":
-[{"name":"name","type":"STRING","optional":false,"unique":true,"index":true}],"primary":"name"},
-{"label":"HAS_Checklist","type":"EDGE","properties":[],"constraints":[["Disease","Checklist"]]},
-{"label":"Symptom","type":"VERTEX","properties":
-[{"name":"name","type":"STRING","optional":false,"unique":true,"index":true}],"primary":"name"},
-{"label":"HAS_SYMPTOM","type":"EDGE","properties":[],"constraints":[["Disease","Symptom"]]},
-{"label":"Complication","type":"VERTEX","properties":
-[{"name":"name","type":"STRING","optional":false,"unique":true,"index":true}],"primary":"name"},
-{"label":"HAS_Complication","type":"EDGE","properties":[],"constraints":[["Disease","Complication"]]},
-{"label":"Treatment","type":"VERTEX","properties":
-[{"name":"name","type":"STRING","optional":false,"unique":true,"index":true}],"primary":"name"},
-{"label":"HAS_Treatment","type":"EDGE","properties":[],"constraints":[["Disease","Treatment"]]},
-{"label":"Drug","type":"VERTEX","properties":
-[{"name":"name","type":"STRING","optional":false,"unique":true,"index":true}],"primary":"name"},
-{"label":"HAS_Drug","type":"EDGE","properties":[],"constraints":[["Disease","Drug"]]},
-{"label":"Period","type":"VERTEX","properties":
-[{"name":"name","type":"STRING","optional":false,"unique":true,"index":true}],"primary":"name"},
-{"label":"Cure_Period","type":"EDGE","properties":[],"constraints":[["Disease","Period"]]},
-{"label":"Rate","type":"VERTEX","properties":
-[{"name":"name","type":"STRING","optional":false,"unique":true,"index":true}],"primary":"name"},
-{"label":"Cure_Rate","type":"EDGE","properties":[],"constraints":[["Disease","Rate"]]}
+{"schema":
+[
+  {
+    "label": "Disease",
+    "type": "VERTEX",
+    "properties": [
+      {
+        "name": "name",
+        "type": "STRING",
+        "optional": false,
+        "unique": true,
+        "index": true
+      }
+    ],
+    "primary": "name"
+  },
+  {
+    "label": "Alias",
+    "type": "VERTEX",
+    "properties": [
+      {
+        "name": "name",
+        "type": "STRING",
+        "optional": false,
+        "unique": true,
+        "index": true
+      }
+    ],
+    "primary": "name"
+  },
+  {
+    "label": "HAS_ALIAS",
+    "type": "EDGE",
+    "properties": [],
+    "constraints": [
+      [
+        "Disease",
+        "Alias"
+      ]
+    ]
+  },
+  {
+    "label": "Part",
+    "type": "VERTEX",
+    "properties": [
+      {
+        "name": "name",
+        "type": "STRING",
+        "optional": false,
+        "unique": true,
+        "index": true
+      }
+    ],
+    "primary": "name"
+  },
+  {
+    "label": "IS_OF_PART",
+    "type": "EDGE",
+    "properties": [],
+    "constraints": [
+      [
+        "Disease",
+        "Part"
+      ]
+    ]
+  },
+  {
+    "label": "Age",
+    "type": "VERTEX",
+    "properties": [
+      {
+        "name": "name",
+        "type": "STRING",
+        "optional": false,
+        "unique": true,
+        "index": true
+      }
+    ],
+    "primary": "name"
+  },
+  {
+    "label": "IS_OF_AGE",
+    "type": "EDGE",
+    "properties": [],
+    "constraints": [
+      [
+        "Disease",
+        "Age"
+      ]
+    ]
+  },
+  {
+    "label": "Infection",
+    "type": "VERTEX",
+    "properties": [
+      {
+        "name": "name",
+        "type": "STRING",
+        "optional": false,
+        "unique": true,
+        "index": true
+      }
+    ],
+    "primary": "name"
+  },
+  {
+    "label": "IS_INFECTIOUS",
+    "type": "EDGE",
+    "properties": [],
+    "constraints": [
+      [
+        "Disease",
+        "Infection"
+      ]
+    ]
+  },
+  {
+    "label": "Insurance",
+    "type": "VERTEX",
+    "properties": [
+      {
+        "name": "name",
+        "type": "STRING",
+        "optional": false,
+        "unique": true,
+        "index": true
+      }
+    ],
+    "primary": "name"
+  },
+  {
+    "label": "In_Insurance",
+    "type": "EDGE",
+    "properties": [],
+    "constraints": [
+      [
+        "Disease",
+        "Insurance"
+      ]
+    ]
+  },
+  {
+    "label": "Department",
+    "type": "VERTEX",
+    "properties": [
+      {
+        "name": "name",
+        "type": "STRING",
+        "optional": false,
+        "unique": true,
+        "index": true
+      }
+    ],
+    "primary": "name"
+  },
+  {
+    "label": "IS_OF_Department",
+    "type": "EDGE",
+    "properties": [],
+    "constraints": [
+      [
+        "Disease",
+        "Department"
+      ]
+    ]
+  },
+  {
+    "label": "Checklist",
+    "type": "VERTEX",
+    "properties": [
+      {
+        "name": "name",
+        "type": "STRING",
+        "optional": false,
+        "unique": true,
+        "index": true
+      }
+    ],
+    "primary": "name"
+  },
+  {
+    "label": "HAS_Checklist",
+    "type": "EDGE",
+    "properties": [],
+    "constraints": [
+      [
+        "Disease",
+        "Checklist"
+      ]
+    ]
+  },
+  {
+    "label": "Symptom",
+    "type": "VERTEX",
+    "properties": [
+      {
+        "name": "name",
+        "type": "STRING",
+        "optional": false,
+        "unique": true,
+        "index": true
+      }
+    ],
+    "primary": "name"
+  },
+  {
+    "label": "HAS_SYMPTOM",
+    "type": "EDGE",
+    "properties": [],
+    "constraints": [
+      [
+        "Disease",
+        "Symptom"
+      ]
+    ]
+  },
+  {
+    "label": "Complication",
+    "type": "VERTEX",
+    "properties": [
+      {
+        "name": "name",
+        "type": "STRING",
+        "optional": false,
+        "unique": true,
+        "index": true
+      }
+    ],
+    "primary": "name"
+  },
+  {
+    "label": "HAS_Complication",
+    "type": "EDGE",
+    "properties": [],
+    "constraints": [
+      [
+        "Disease",
+        "Complication"
+      ]
+    ]
+  },
+  {
+    "label": "Treatment",
+    "type": "VERTEX",
+    "properties": [
+      {
+        "name": "name",
+        "type": "STRING",
+        "optional": false,
+        "unique": true,
+        "index": true
+      }
+    ],
+    "primary": "name"
+  },
+  {
+    "label": "HAS_Treatment",
+    "type": "EDGE",
+    "properties": [],
+    "constraints": [
+      [
+        "Disease",
+        "Treatment"
+      ]
+    ]
+  },
+  {
+    "label": "Drug",
+    "type": "VERTEX",
+    "properties": [
+      {
+        "name": "name",
+        "type": "STRING",
+        "optional": false,
+        "unique": true,
+        "index": true
+      }
+    ],
+    "primary": "name"
+  },
+  {
+    "label": "HAS_Drug",
+    "type": "EDGE",
+    "properties": [],
+    "constraints": [
+      [
+        "Disease",
+        "Drug"
+      ]
+    ]
+  },
+  {
+    "label": "Period",
+    "type": "VERTEX",
+    "properties": [
+      {
+        "name": "name",
+        "type": "STRING",
+        "optional": false,
+        "unique": true,
+        "index": true
+      }
+    ],
+    "primary": "name"
+  },
+  {
+    "label": "Cure_Period",
+    "type": "EDGE",
+    "properties": [],
+    "constraints": [
+      [
+        "Disease",
+        "Period"
+      ]
+    ]
+  },
+  {
+    "label": "Rate",
+    "type": "VERTEX",
+    "properties": [
+      {
+        "name": "name",
+        "type": "STRING",
+        "optional": false,
+        "unique": true,
+        "index": true
+      }
+    ],
+    "primary": "name"
+  },
+  {
+    "label": "Cure_Rate",
+    "type": "EDGE",
+    "properties": [],
+    "constraints": [
+      [
+        "Disease",
+        "Rate"
+      ]
+    ]
+  }
 ]
+}
